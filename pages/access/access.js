@@ -1,11 +1,15 @@
 // pages/access/access.js
 Page({
   data: {
-    switch: true
+    switch: false
   },
   switch(e) {
     this.setData({
       switch: !e.detail.value
     })
+  },
+
+  userInfo(e) {
+    console.log(e)
   }
 })
