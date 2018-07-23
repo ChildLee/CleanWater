@@ -1,0 +1,68 @@
+@import "../../common";
+
+page {
+  background-color: #FFFFFF;
+}
+
+.water {
+  margin-top: rpx(30);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  image {
+    width: rpx(290);
+    height: rpx(290);
+  }
+  > view {
+    color: #FFFFFF;
+    position: absolute;
+    top: rpx(250);
+  }
+}
+
+.desc {
+  padding: 0 rpx(30);
+  font-size: rpx(24);
+  color: #999BA2;
+  line-height: rpx(42);
+}
+
+.info {
+  padding: 0 rpx(30) rpx(30);
+  > view {
+    display: flex;
+    justify-content: space-between;
+    line-height: rpx(100);
+    @include border();
+    > view:first-child {
+      font-size: rpx(28);
+      color: #333333;
+    }
+    > view:last-child {
+      font-size: rpx(28);
+      color: #FF8351;
+    }
+  }
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  view {
+    width: rpx(560);
+    height: rpx(94);
+    line-height: rpx(94);
+    border-radius: rpx(94);
+    text-align: center;
+  }
+  > view:first-child {
+    margin: rpx(50) 0 rpx(30) 0;
+    background-color: $bgColor;
+    color: #FFFFFF;
+  }
+  > view:last-child {
+    border: rpx(3) solid $bgColor;
+    color: $bgColor;
+  }
+}

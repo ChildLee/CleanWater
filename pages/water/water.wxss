@@ -1,0 +1,67 @@
+page {
+  background-color: #FFFFFF; }
+
+.water {
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .water image {
+    width: 290rpx;
+    height: 290rpx; }
+  .water > view {
+    color: #FFFFFF;
+    position: absolute;
+    top: 250rpx; }
+
+.desc {
+  padding: 0 30rpx;
+  font-size: 24rpx;
+  color: #999BA2;
+  line-height: 42rpx; }
+
+.select-water {
+  padding: 30rpx; }
+  .select-water .title {
+    font-size: 32rpx;
+    color: #333333; }
+  .select-water .list {
+    margin-top: 50rpx;
+    display: flex;
+    justify-content: space-between; }
+    .select-water .list .item {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      width: 215rpx;
+      height: 115rpx;
+      border-radius: 115rpx;
+      border: 2rpx solid #E0E0E0;
+      font-size: 32rpx; }
+      .select-water .list .item view:first-child {
+        color: #5E9825; }
+      .select-water .list .item view:last-child {
+        color: #FF8351; }
+    .select-water .list .item-selected {
+      border: 4rpx solid #5E9825;
+      background: rgba(94, 152, 37, 0.05); }
+      .select-water .list .item-selected view:last-child {
+        color: #5E9825; }
+
+.btn {
+  position: absolute;
+  bottom: 30rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .btn view {
+    width: 560rpx;
+    height: 94rpx;
+    line-height: 94rpx;
+    border-radius: 94rpx;
+    text-align: center;
+    margin: 50rpx 0 30rpx 0;
+    background-color: #498A08;
+    color: #FFFFFF; }

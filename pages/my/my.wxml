@@ -1,0 +1,21 @@
+<view class="my">
+  <image src="http://placekitten.com/200/300"></image>
+  <view class="my-name">以梦喂马</view>
+</view>
+
+<view class="blank_line"></view>
+
+<view class="list">
+  <view class="wallet">
+    <view class="name">
+      <view class="icon icon-wallet"></view>
+      <view>我的钱包</view>
+    </view>
+    <view class="desc">
+      <view>可用余额1002.00</view>
+      <view class="icon icon-arrow"></view>
+    </view>
+  </view>
+</view>
+
+<tabBar></tabBar>

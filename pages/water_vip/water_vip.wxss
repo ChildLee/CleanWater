@@ -1,0 +1,66 @@
+page {
+  background-color: #FFFFFF; }
+
+.water {
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .water image {
+    width: 290rpx;
+    height: 290rpx; }
+  .water > view {
+    color: #FFFFFF;
+    position: absolute;
+    top: 250rpx; }
+
+.desc {
+  padding: 0 30rpx;
+  font-size: 24rpx;
+  color: #999BA2;
+  line-height: 42rpx; }
+
+.info {
+  padding: 0 30rpx 30rpx; }
+  .info > view {
+    display: flex;
+    justify-content: space-between;
+    line-height: 100rpx; }
+    .info > view {
+      position: relative; }
+      .info > view:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        border-bottom: 1px solid #e0e0e0;
+        box-sizing: border-box;
+        transform: scale(0.5);
+        transform-origin: 0 0;
+        pointer-events: none; }
+    .info > view > view:first-child {
+      font-size: 28rpx;
+      color: #333333; }
+    .info > view > view:last-child {
+      font-size: 28rpx;
+      color: #FF8351; }
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .btn view {
+    width: 560rpx;
+    height: 94rpx;
+    line-height: 94rpx;
+    border-radius: 94rpx;
+    text-align: center; }
+  .btn > view:first-child {
+    margin: 50rpx 0 30rpx 0;
+    background-color: #498A08;
+    color: #FFFFFF; }
+  .btn > view:last-child {
+    border: 3rpx solid #498A08;
+    color: #498A08; }

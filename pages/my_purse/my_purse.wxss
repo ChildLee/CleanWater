@@ -1,0 +1,46 @@
+.purse {
+  background-color: #498A08;
+  height: 440rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #FFFFFF; }
+  .purse .purse-title {
+    font-size: 28rpx;
+    opacity: 0.9;
+    position: relative;
+    bottom: 10%; }
+  .purse .purse-price text:first-child {
+    font-size: 100rpx; }
+  .purse .purse-price text:last-child {
+    font-size: 28rpx; }
+
+.recharge {
+  margin-top: 30rpx;
+  padding: 30rpx; }
+  .recharge .recharge-title {
+    font-size: 32rpx;
+    color: #333333; }
+  .recharge .recharge-enter {
+    padding: 110rpx 0;
+    display: flex;
+    justify-content: center; }
+    .recharge .recharge-enter input {
+      text-align: center;
+      width: 560rpx;
+      height: 100rpx;
+      border-radius: 100rpx;
+      border: 1px solid #ccc; }
+
+.btn-box {
+  display: flex;
+  justify-content: center; }
+  .btn-box .btn {
+    color: #FFFFFF;
+    width: 560rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    border-radius: 100rpx;
+    background-color: #498A08; }

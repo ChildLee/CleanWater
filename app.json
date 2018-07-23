@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/protocol/protocol",
+    "pages/my/my",
+    "pages/my_purse/my_purse",
+    "pages/water_vip/water_vip",
+    "pages/water_vip_over/water_vip_over",
+    "pages/water/water",
+    "pages/water_over/water_over",
+    "pages/find/find",
+    "pages/find_info/find_info"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

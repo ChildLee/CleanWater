@@ -1,0 +1,60 @@
+@import "../../common";
+
+.purse {
+  background-color: $bgColor;
+  height: rpx(440);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #FFFFFF;
+  .purse-title {
+    font-size: rpx(28);
+    opacity: 0.9;
+    position: relative;
+    bottom: 10%;
+  }
+  .purse-price {
+    text:first-child {
+      font-size: rpx(100);
+    }
+    text:last-child {
+      font-size: rpx(28);
+    }
+  }
+}
+
+.recharge {
+  margin-top: rpx(30);
+  padding: rpx(30);
+  .recharge-title {
+    font-size: rpx(32);
+    color: #333333;
+  }
+  .recharge-enter {
+    padding: rpx(110) 0;
+    display: flex;
+    justify-content: center;
+    input {
+      text-align: center;
+      width: rpx(560);
+      height: rpx(100);
+      border-radius: rpx(100);
+      border: 1px solid #ccc;
+    }
+  }
+}
+
+.btn-box {
+  display: flex;
+  justify-content: center;
+  .btn {
+    color: #FFFFFF;
+    width: rpx(560);
+    height: rpx(100);
+    line-height: rpx(100);
+    text-align: center;
+    border-radius: rpx(100);
+    background-color: $bgColor;
+  }
+}

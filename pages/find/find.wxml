@@ -1,0 +1,15 @@
+<view class="news-list">
+
+  <block wx:for="{{5}}" wx:key="{{index}}">
+    <navigator url='/pages/find_info/find_info' class="item">
+      <image src="https://picsum.photos/{{index+1}}00"></image>
+      <view class="title">智能净水SaaS管理平台，帮助净水厂商全面拥
+        抱物联网
+      </view>
+      <view class="date">发布时间：2018.06.27</view>
+    </navigator>
+  </block>
+
+</view>
+
+<tabBar></tabBar>

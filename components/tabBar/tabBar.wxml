@@ -1,0 +1,18 @@
+<view class="blank"></view>
+<view class="tabBar">
+  <view data-index="0" class="tab" bindtap="tab">
+    <image class="tab-icon" src="/image/find.png"></image>
+    <view class="tab-text">发现</view>
+  </view>
+  <view class="tab">
+    <view class="scan_box" bindtap="scanCode">
+      <view class="scan_btn" hover-class="navigator-hover">
+        <image class="scan_code" src="/image/scan_code.png"></image>
+      </view>
+    </view>
+  </view>
+  <view data-index="1" class="tab" bindtap="tab">
+    <image class="tab-icon" src="/image/my.png"></image>
+    <view class="tab-text">我的</view>
+  </view>
+</view>
