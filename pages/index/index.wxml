@@ -1,5 +1,5 @@
 <view class="prompt">
-  <image src="/image/scan_code-bg.png"></image>
+  <image src="/image/home_bg.png"></image>
   <view>点击扫设备上的二维码</view>
   <view>查看水质选择水量</view>
 </view>
@@ -7,7 +7,7 @@
 <view class="protocol">
   <checkbox-group>
     <label>
-      <checkbox>
+      <checkbox checked>
         <text>同意</text>
       </checkbox>
     </label>

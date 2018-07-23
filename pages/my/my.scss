@@ -46,12 +46,9 @@ page {
       font-size: rpx(32);
       color: #333333;
       .icon {
+        width: rpx(48);
+        height: rpx(48);
         margin-right: rpx(10);
-        border-radius: 50%;
-        padding: rpx(10);
-        color: #f8f8f8;
-        opacity: .6;
-        background-color: $bgColor;
       }
     }
     .desc {

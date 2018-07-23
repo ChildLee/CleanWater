@@ -29,7 +29,7 @@
       justify-content: center;
       background-color: #ffffff; }
       .tabBar .tab .scan_box .scan_btn {
-        background-color: #498A08;
+        background-color: #498a08;
         width: 188rpx;
         height: 88rpx;
         border-radius: 88rpx;
@@ -42,3 +42,5 @@
           opacity: .8; }
     .tabBar .tab .tab-text {
       font-size: 22rpx; }
+    .tabBar .tab .tab-selected {
+      color: #498a08; }

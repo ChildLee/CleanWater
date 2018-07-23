@@ -52,5 +52,8 @@
     .tab-text {
       font-size: rpx(22);
     }
+    .tab-selected {
+      color: $bgColor;
+    }
   }
 }

@@ -6,7 +6,9 @@ App({
 
   dateformat,
 
-  data: {},
+  data: {
+    index: -1
+  },
 
   onLaunch() {
 

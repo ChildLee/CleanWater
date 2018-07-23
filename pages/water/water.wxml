@@ -1,6 +1,7 @@
 <view class="water">
-  <image src="http://placekitten.com/200/300"></image>
-  <view>TDS值：18</view>
+  <image src="/image/Order_but.png"></image>
+  <view class="quality">优</view>
+  <view class="tds">TDS值：18</view>
 </view>
 
 <view class="desc">
@@ -12,18 +13,14 @@
 <view class="select-water">
   <view class="title">请选择水量：</view>
   <view class="list">
-    <view class="item item-selected">
-      <view>200ml</view>
-      <view>0.2元</view>
-    </view>
-    <view class="item">
-      <view>300ml</view>
-      <view>0.3元</view>
-    </view>
-    <view class="item">
-      <view>500ml</view>
-      <view>0.5元</view>
-    </view>
+
+    <block wx:for="{{water}}" wx:key="{{index}}">
+      <view class="item {{tabIndex===index?'item-selected':''}}" data-index="{{index}}" bindtap="tab">
+        <view>{{item.mete}}ml</view>
+        <view>{{item.price}}元</view>
+      </view>
+    </block>
+
   </view>
 </view>
 

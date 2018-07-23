@@ -50,12 +50,9 @@ page {
       font-size: 32rpx;
       color: #333333; }
       .list .wallet .name .icon {
-        margin-right: 10rpx;
-        border-radius: 50%;
-        padding: 10rpx;
-        color: #f8f8f8;
-        opacity: .6;
-        background-color: #498A08; }
+        width: 48rpx;
+        height: 48rpx;
+        margin-right: 10rpx; }
     .list .wallet .desc {
       font-size: 28rpx;
       color: #969FA9; }

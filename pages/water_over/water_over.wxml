@@ -1,5 +1,5 @@
 <view class="water">
-  <image src="http://placekitten.com/200/300"></image>
+  <image src="/image/Order_bg.png"></image>
   <view class="water-title">取水完成</view>
   <view class="water-time">请按下按钮取水，中断取水20s后自动清零</view>
 </view>

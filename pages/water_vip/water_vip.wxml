@@ -1,6 +1,7 @@
 <view class="water">
-  <image src="http://placekitten.com/200/300"></image>
-  <view>TDS值：18</view>
+  <image src="/image/Order_but.png"></image>
+  <view class="quality">优</view>
+  <view class="tds">TDS值：18</view>
 </view>
 
 <view class="desc">

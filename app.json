@@ -9,7 +9,8 @@
     "pages/water/water",
     "pages/water_over/water_over",
     "pages/find/find",
-    "pages/find_info/find_info"
+    "pages/find_info/find_info",
+    "pages/access/access"
   ],
   "window": {
     "backgroundTextStyle": "light",

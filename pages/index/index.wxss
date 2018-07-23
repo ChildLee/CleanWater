@@ -3,7 +3,7 @@ checkbox .wx-checkbox-input {
   height: 32rpx; }
 
 checkbox .wx-checkbox-input.wx-checkbox-input-checked {
-  background-color: #498A08; }
+  background-color: #498a08; }
 
 checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   color: #fff; }
@@ -33,4 +33,4 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   .protocol text:first-child {
     color: #A6A7AD; }
   .protocol text:last-child {
-    color: #498A08; }
+    color: #498a08; }

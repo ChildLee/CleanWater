@@ -1,23 +1,34 @@
+const app = getApp()
+
 Component({
   properties: {
     setIndex: {
       type: Number,
-      value: 0
+      value: -1
     }
   },
-  data: {
-    index: 0
-  },
   methods: {
-    tab(e) {
-      if (Number(e.currentTarget.dataset.index)) {
-        console.log(1)
+    find() {
+      if (app.data.index !== 0) {
+        app.data.index = 0
+        wx.redirectTo({url: '/pages/find/find'})
+      }
+    },
+    my() {
+      if (app.data.index !== 1) {
+        app.data.index = 1
+        wx.redirectTo({url: '/pages/my/my'})
       }
     },
     scanCode() {
+      if (app.data.index !== -1) {
+        app.data.index = -1
+        wx.redirectTo({url: '/pages/index/index'})
+      }
+
       wx.scanCode({
         success(res) {
-          console.log(res)
+          wx.navigateTo({url: '/pages/water/water'})
         }
       })
     }

@@ -1,8 +1,8 @@
 <view class="blank"></view>
 <view class="tabBar">
-  <view data-index="0" class="tab" bindtap="tab">
-    <image class="tab-icon" src="/image/find.png"></image>
-    <view class="tab-text">发现</view>
+  <view class="tab" bindtap="find">
+    <image class="tab-icon" src="/image/find{{setIndex===0?'-sel':''}}.png"></image>
+    <view class="tab-text {{setIndex===0?'tab-selected':''}}">发现</view>
   </view>
   <view class="tab">
     <view class="scan_box" bindtap="scanCode">
@@ -11,8 +11,8 @@
       </view>
     </view>
   </view>
-  <view data-index="1" class="tab" bindtap="tab">
-    <image class="tab-icon" src="/image/my.png"></image>
-    <view class="tab-text">我的</view>
+  <view class="tab" bindtap="my">
+    <image class="tab-icon" src="/image/my{{setIndex===1?'-sel':''}}.png"></image>
+    <view class="tab-text {{setIndex===1?'tab-selected':''}}">我的</view>
   </view>
 </view>

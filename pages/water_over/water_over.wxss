@@ -10,10 +10,10 @@
     margin: 15rpx 0;
     font-weight: bold;
     font-size: 36rpx;
-    color: #498A08; }
+    color: #498a08; }
   .water .water-time {
     font-size: 28rpx;
-    color: #498A08; }
+    color: #498a08; }
 
 .order {
   padding: 30rpx; }
