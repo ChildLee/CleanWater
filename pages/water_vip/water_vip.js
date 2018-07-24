@@ -1,64 +1,27 @@
-// pages/water_vip/water_vip.js
+const app = getApp()
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {},
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  data: {
+    money: 0,
+    max_dosage: 0
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onLoad(e) {
+    this.data.mac_id = e.mac_id
+    this.setData({
+      money: wx.getStorageSync('money'),
+      max_dosage: wx.getStorageSync('max_dosage')
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  stopWater() {
+    app.api.close_water({
+      user_id: wx.getStorageSync('user_id'),
+      device_id: this.data.mac_id
+    }).then(res => {
+      app.data.order_vip = res.data
+      wx.navigateTo({url: '/pages/water_vip_over/water_vip_over'})
+    })
   }
 })

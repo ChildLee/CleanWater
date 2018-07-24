@@ -44,3 +44,10 @@
       font-size: 22rpx; }
     .tabBar .tab .tab-selected {
       color: #498a08; }
+
+button {
+  padding: 0;
+  line-height: 1.5;
+  background-color: #FFFFFF; }
+  button:after {
+    border: none !important; }

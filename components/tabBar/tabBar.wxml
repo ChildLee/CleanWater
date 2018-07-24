@@ -11,8 +11,8 @@
       </view>
     </view>
   </view>
-  <view class="tab" bindtap="my">
+  <button hover-class="none" open-type="getUserInfo" bindgetuserinfo="userInfo" class="tab">
     <image class="tab-icon" src="/image/my{{setIndex===1?'-sel':''}}.png"></image>
     <view class="tab-text {{setIndex===1?'tab-selected':''}}">我的</view>
-  </view>
+  </button>
 </view>

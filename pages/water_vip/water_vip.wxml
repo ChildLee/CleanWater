@@ -13,11 +13,11 @@
 <view class="info">
   <view>
     <view>您的账户余额</view>
-    <view>10.00元</view>
+    <view>{{money}}元</view>
   </view>
   <view>
     <view>您可取水量</view>
-    <view>1000ml</view>
+    <view>{{max_dosage}}ml</view>
   </view>
 </view>
 
@@ -27,7 +27,7 @@
   </text>
 </view>
 
-<view class="btn">
-  <view>停止取水</view>
-  <view>去充值</view>
+<view class="btn-box">
+  <view class="btn" bindtap="stopWater">停止取水</view>
+  <navigator url="/pages/my_purse/my_purse" class="btn">去充值</navigator>
 </view>

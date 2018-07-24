@@ -10,19 +10,19 @@
       <image src="/image/icon_tequipment.png"></image>
       购买水量
     </view>
-    <view class="item-water">100ml</view>
+    <view class="item-water">{{order_vip.dosage}}ml</view>
   </view>
   <view class="order-item">
     <view>
       <image src="/image/icon_port.png"></image>
       支付金额
     </view>
-    <view class="item-price">1.00元</view>
+    <view class="item-price">{{order_vip.money}}元</view>
   </view>
 </view>
 
 <view class="over-btn">
-  <view>完成</view>
+  <navigator class="btn" open-type="redirect" url="/pages/index/index">完成</navigator>
 </view>
 
 <view class="remind">

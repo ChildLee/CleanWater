@@ -1,7 +1,7 @@
 <view class="purse">
   <view class="purse-title">账户余额</view>
   <view class="purse-price">
-    <text>11110.00</text>
+    <text>{{balance}}</text>
     <text>元</text>
   </view>
 </view>
@@ -9,11 +9,11 @@
 <view class="recharge">
   <view class="recharge-title">充值金额：</view>
   <view class="recharge-enter">
-    <input placeholder="请输入充值金额，最低1元"/>
+    <input type="number" bindinput="inputMoney" placeholder="请输入充值金额，最低1元"/>
   </view>
 </view>
 
 
 <view class="btn-box">
-  <view class="btn">立即充值</view>
+  <view class="btn" bindtap="pay">立即充值</view>
 </view>

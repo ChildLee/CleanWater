@@ -52,23 +52,23 @@ page {
   }
 }
 
-.btn {
+.btn-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  view {
+  .btn {
     width: rpx(560);
     height: rpx(94);
     line-height: rpx(94);
     border-radius: rpx(94);
     text-align: center;
   }
-  > view:first-child {
+  > .btn:first-child {
     margin: rpx(50) 0 rpx(30) 0;
     background-color: $bgColor;
     color: #FFFFFF;
   }
-  > view:last-child {
+  > .btn:last-child {
     border: rpx(3) solid $bgColor;
     color: $bgColor;
   }

@@ -2,11 +2,19 @@ const app = getApp()
 
 Page({
 
-  data: {},
+  data: {
+    balance: 0
+  },
 
-  onLoad() {
-    this.setData({setIndex: app.data.index})
-
+  onShow() {
+    wx.getUserInfo({
+      success: (res) => {
+        this.setData({
+          setIndex: app.data.index,
+          info: res.userInfo,
+          balance: wx.getStorageSync('money')
+        })
+      }
+    })
   }
-
 })

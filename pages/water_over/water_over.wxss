@@ -56,7 +56,7 @@
   text-align: center;
   align-items: center;
   flex-direction: column; }
-  .over-btn view {
+  .over-btn .btn {
     box-sizing: border-box;
     margin: 15rpx 0;
     width: 560rpx;
@@ -64,10 +64,10 @@
     border-radius: 94rpx;
     line-height: 94rpx;
     font-size: 32rpx; }
-  .over-btn view:first-child {
+  .over-btn .btn:first-child {
     background: #498A08;
     color: #FFFFFF; }
-  .over-btn view:last-child {
+  .over-btn .btn:last-child {
     color: #498A08;
     border: 4rpx solid #498A08; }
 

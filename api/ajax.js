@@ -1,5 +1,4 @@
-// const host = 'https://project.xiaozhanxiang.com/wechar'
-const host = 'http://182.61.53.108/wechar'
+const host = 'http://120.24.55.58:8121/wechat'
 
 class ajax {
   static get(url, data) {
@@ -16,6 +15,9 @@ class ajax {
         url: host + url,
         data,
         method,
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
         success: function (res) {
           resolve(res.data)
         },

@@ -57,7 +57,7 @@
   text-align: center;
   align-items: center;
   flex-direction: column;
-  view {
+  .btn {
     box-sizing: border-box;
     margin: rpx(15) 0;
     width: rpx(560);
@@ -66,11 +66,11 @@
     line-height: rpx(94);
     font-size: rpx(32);
   }
-  view:first-child {
+  .btn:first-child {
     background: #498A08;
     color: #FFFFFF;
   }
-  view:last-child {
+  .btn:last-child {
     color: #498A08;
     border: rpx(4) solid #498A08;
   }

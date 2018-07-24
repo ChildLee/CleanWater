@@ -34,8 +34,10 @@ page {
   .select-water .list {
     margin-top: 50rpx;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    flex-wrap: wrap; }
     .select-water .list .item {
+      margin-bottom: 30rpx;
       box-sizing: border-box;
       display: flex;
       align-items: center;

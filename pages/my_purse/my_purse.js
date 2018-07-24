@@ -1,64 +1,60 @@
-// pages/my_purse/my_purse.js
+const app = getApp()
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {},
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  data: {
+    balance: 0,
+    money: 0
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onLoad() {
+    this.setData({
+      balance: wx.getStorageSync('money')
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  inputMoney(e) {
+    this.data.money = e.detail.value
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  //统一下单
+  unifiedOrder() {
+    return app.api.create_order({
+      'type': '1',                             //:订单类型 1:用户充值 2：用户购买套餐
+      'user_id': wx.getStorageSync('user_id'),  //:用户ID 必填
+      'money': this.data.money
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  pay() {
+    if (Number(this.data.money) < 1) {
+      return wx.showToast({title: '充值金额最少1元', icon: 'none'})
+    }
+    wx.showLoading({title: '请稍后'})
+    this.unifiedOrder().then(res => {
+      wx.hideLoading()
+      wx.requestPayment({
+        'timeStamp': res.data.timeStamp,
+        'nonceStr': res.data.nonceStr,
+        'package': res.data.package,
+        'signType': res.data.signType,
+        'paySign': res.data.paySign,
+        success() {
+          this.rechargeSuccessful()
+        }
+      })
+    })
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //充值成功
+  rechargeSuccessful() {
+    app.api.get_user_info({user_id: wx.getStorageSync('user_id')}).then(res => {
+      this.setData({
+        balance: res.data['money']
+      })
+      wx.setStorageSync('money', res.data['money'])
+      wx.setStorageSync('max_dosage', res.data['max_dosage'])
+      wx.setStorageSync('isVIP', true)
+    })
   }
 })
