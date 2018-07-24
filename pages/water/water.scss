@@ -18,11 +18,13 @@ page {
     color: $bgColor;
     font-size: rpx(100);
     position: absolute;
+    left: calc(50% - #{rpx(45)});
     top: rpx(50);
   }
   .tds {
     color: #bfbd1f;
     position: absolute;
+    left: calc(50% - #{rpx(70)});
     top: rpx(220);
   }
 }

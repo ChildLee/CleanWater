@@ -1,4 +1,4 @@
-const host = 'http://120.24.55.58:8121/wechat'
+const host = 'https://api.ourslinks.com/index.php/qx/wechat'
 
 class ajax {
   static get(url, data) {

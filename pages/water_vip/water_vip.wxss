@@ -14,10 +14,12 @@ page {
     color: #498a08;
     font-size: 100rpx;
     position: absolute;
+    left: calc(50% - 50rpx);
     top: 50rpx; }
   .water .tds {
     color: #bfbd1f;
     position: absolute;
+    left: calc(50% - 76rpx);
     top: 220rpx; }
 
 .desc {

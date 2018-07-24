@@ -39,7 +39,7 @@ Page({
         'package': res.data.package,
         'signType': res.data.signType,
         'paySign': res.data.paySign,
-        success() {
+        success: () => {
           this.rechargeSuccessful()
         }
       })
