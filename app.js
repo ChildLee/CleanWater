@@ -7,7 +7,9 @@ App({
   dateformat,
 
   data: {
-    index: -1
+    index: -1,
+    //默认同意协议
+    agree: 1
   },
 
   onLaunch() {

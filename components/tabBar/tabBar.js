@@ -26,6 +26,9 @@ Component({
       }
     },
     scanCode() {
+      if (!app.data.agree) {
+        return wx.showToast({title: '未同意《用户协议》不能享受服务', icon: 'none'})
+      }
       if (app.data.index !== -1) {
         app.data.index = -1
         wx.redirectTo({url: '/pages/index/index'})

@@ -1,4 +1,5 @@
-// pages/index/index.js
+const app = getApp()
+
 Page({
 
 
@@ -12,6 +13,6 @@ Page({
 
   //同意协议
   agree(e) {
-    console.log(e)
+    app.data.agree = e.detail.value.length
   }
 })

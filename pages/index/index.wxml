@@ -7,7 +7,7 @@
 <view class="protocol">
   <checkbox-group bindchange="agree">
     <label>
-      <checkbox checked>
+      <checkbox value="1" checked>
         <text>同意</text>
       </checkbox>
     </label>
