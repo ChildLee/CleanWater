@@ -4,11 +4,15 @@ Page({
 
   data: {
     money: 0,
-    max_dosage: 0
+    max_dosage: 0,
+    tds: 0
   },
 
   onLoad(e) {
     this.data.mac_id = e.mac_id
+    this.setData({
+      tds: e.tds
+    })
   },
 
   onShow() {

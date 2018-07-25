@@ -1,7 +1,7 @@
 <view class="water">
   <image src="/image/Order_but.png"></image>
   <view class="quality">优</view>
-  <view class="tds">TDS值：18</view>
+  <view class="tds">TDS值：{{tds}}</view>
 </view>
 
 <view class="desc">

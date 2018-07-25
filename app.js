@@ -14,7 +14,8 @@ App({
 
   onLaunch() {
     //用户登录
-    if (!wx.getStorageSync('user_id')) {
+    const user_id=wx.getStorageSync('user_id')
+    if (!user_id) {
       wx.showLoading({title: '加载中~'})
       wx.login({
         success(res) {
@@ -37,7 +38,16 @@ App({
           })
         }
       })
+    } else {
+      api.get_user_info({user_id: user_id}).then(res=>{
+        let isVIP = false
+        if (Number(res.data['money']) > 0) {
+          isVIP = true
+        }
+        wx.setStorageSync('money', res.data['money'])
+        wx.setStorageSync('max_dosage', res.data['max_dosage'])
+        wx.setStorageSync('isVIP', isVIP)
+      })
     }
   }
-
 })

@@ -4,12 +4,18 @@ Page({
 
   data: {
     water_package_id: -1,
-    water: []
+    water: [],
+    tds: 0
   },
 
   onLoad(e) {
     this.data.mac_id = e.mac_id
-    this.get_water_package()
+    this.get_water_package().then(res => {
+      this.setData({
+        tds: e.tds,
+        water: res.data
+      })
+    })
   },
 
 
@@ -17,11 +23,7 @@ Page({
    * 获取水量套餐包
    */
   get_water_package() {
-    app.api.get_water_package().then(res => {
-      this.setData({
-        water: res.data
-      })
-    })
+    return app.api.get_water_package()
   },
 
   /**

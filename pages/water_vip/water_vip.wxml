@@ -1,7 +1,7 @@
 <view class="water">
   <image src="/image/Order_but.png"></image>
   <view class="quality">优</view>
-  <view class="tds">TDS值：18</view>
+  <view class="tds">TDS值：{{tds}}</view>
 </view>
 
 <view class="desc">
@@ -29,5 +29,5 @@
 
 <view class="btn-box">
   <view class="btn" bindtap="stopWater">停止取水</view>
-  <navigator url="/pages/my_purse/my_purse" open-type="" class="btn">去充值</navigator>
+  <navigator url="/pages/my_purse/my_purse" class="btn">去充值</navigator>
 </view>

@@ -48,9 +48,9 @@ Component({
           }).then(res => {
             if (res && Number(res.state) === 1) {
               if (wx.getStorageSync('isVIP')) {
-                wx.navigateTo({url: `/pages/water_vip/water_vip?mac_id=${res.id}`})
+                wx.navigateTo({url: `/pages/water_vip/water_vip?mac_id=${res.id}&tds=${res['tds_after']}`})
               } else {
-                wx.navigateTo({url: `/pages/water/water?mac_id=${res.id}`})
+                wx.navigateTo({url: `/pages/water/water?mac_id=${res.id}&tds=${res['tds_after']}`})
               }
             }
           })
