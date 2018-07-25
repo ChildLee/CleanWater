@@ -29,10 +29,11 @@ Component({
       if (!app.data.agree) {
         return wx.showToast({title: '未同意《用户协议》不能享受服务', icon: 'none'})
       }
-      if (app.data.index !== -1) {
-        app.data.index = -1
-        wx.redirectTo({url: '/pages/index/index'})
-      }
+      //不删除这段代码苹果扫码会闪退
+      // if (app.data.index !== -1) {
+      //   app.data.index = -1
+      //   wx.redirectTo({url: '/pages/index/index'})
+      // }
       wx.scanCode({
         success(res) {
           app.api.bind_device({

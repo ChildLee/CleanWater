@@ -7,7 +7,7 @@ Page({
     money: 0
   },
 
-  onLoad() {
+  onShow() {
     this.setData({
       balance: wx.getStorageSync('money')
     })
@@ -46,7 +46,7 @@ Page({
     })
   },
 
-  //充值成功
+  //更新余额
   rechargeSuccessful() {
     app.api.get_user_info({user_id: wx.getStorageSync('user_id')}).then(res => {
       this.setData({

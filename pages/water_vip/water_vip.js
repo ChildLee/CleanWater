@@ -9,6 +9,9 @@ Page({
 
   onLoad(e) {
     this.data.mac_id = e.mac_id
+  },
+
+  onShow() {
     this.setData({
       money: wx.getStorageSync('money'),
       max_dosage: wx.getStorageSync('max_dosage')

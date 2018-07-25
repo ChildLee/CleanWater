@@ -15,6 +15,7 @@ App({
   onLaunch() {
     //用户登录
     if (!wx.getStorageSync('user_id')) {
+      wx.showLoading({title: '加载中~'})
       wx.login({
         success(res) {
           api.get_open_id({code: res.code}).then(res => {
@@ -32,6 +33,7 @@ App({
             wx.setStorageSync('money', res.data['money'])
             wx.setStorageSync('max_dosage', res.data['max_dosage'])
             wx.setStorageSync('isVIP', isVIP)
+            wx.hideLoading()
           })
         }
       })

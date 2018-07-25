@@ -6,15 +6,20 @@ Page({
     balance: 0
   },
 
-  onShow() {
+  onLoad() {
     wx.getUserInfo({
       success: (res) => {
         this.setData({
-          setIndex: app.data.index,
-          info: res.userInfo,
-          balance: wx.getStorageSync('money')
+          info: res.userInfo
         })
       }
+    })
+  },
+
+  onShow() {
+    this.setData({
+      setIndex: app.data.index,
+      balance: wx.getStorageSync('money')
     })
   }
 })
