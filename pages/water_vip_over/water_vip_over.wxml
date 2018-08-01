@@ -1,7 +1,7 @@
 <view class="water">
   <image src="/image/Order_bg.png"></image>
   <view class="water-title">取水完成</view>
-  <view class="water-time">2018年06月29日 18时10分</view>
+  <view class="water-time">{{date}}</view>
 </view>
 
 <view class="order">

@@ -28,7 +28,7 @@ Page({
       device_id: this.data.mac_id
     }).then(res => {
       app.data.order_vip = res.data
-      wx.navigateTo({url: '/pages/water_vip_over/water_vip_over'})
+      wx.redirectTo({url: '/pages/water_vip_over/water_vip_over'})
     })
   }
 })

@@ -22,7 +22,7 @@
 </view>
 
 <view class="over-btn">
-  <navigator class="btn" open-type="redirect" url="/pages/my_purse/my_purse">去充值</navigator>
+  <navigator class="btn" url="/pages/my_purse/my_purse">去充值</navigator>
   <navigator class="btn" open-type="redirect" url="/pages/index/index">完成</navigator>
 </view>
 

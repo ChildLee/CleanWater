@@ -60,7 +60,7 @@ Page({
           'signType': res.data.signType,
           'paySign': res.data.paySign,
           success(res) {
-            wx.navigateTo({url: '/pages/water_over/water_over'})
+            wx.redirectTo({url: '/pages/water_over/water_over'})
           }
         })
       })
