@@ -10,8 +10,16 @@ Page({
 
   onLoad(e) {
     this.data.mac_id = e.mac_id
+    let tds = e.tds
+    if (tds !== undefined && Number(tds) === 0) {
+      tds = 0
+    } else if (tds !== undefined && tds.length === 1) {
+      tds = '00' + tds
+    }else if (tds !== undefined && tds.length === 2) {
+      tds = '0' + tds
+    }
     this.setData({
-      tds: e.tds
+      tds
     })
   },
 

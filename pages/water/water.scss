@@ -22,7 +22,7 @@ page {
     top: rpx(50);
   }
   .tds {
-    color: #bfbd1f;
+    color: darken($bgColor,5%);
     position: absolute;
     left: calc(50% - #{rpx(70)});
     top: rpx(220);
@@ -68,9 +68,9 @@ page {
     }
     .item-selected {
       border: rpx(4) solid #5E9825;
-      background: rgba(94, 152, 37, 0.05);
-      view:last-child {
-        color: #5E9825;
+      background: rgba(94, 152, 37, 0.15);
+      view {
+        color: darken(#5E9825, 10%) !important;
       }
     }
   }

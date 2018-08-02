@@ -22,9 +22,9 @@ page {
     top: rpx(50);
   }
   .tds {
-    color: #bfbd1f;
+    color: $bgColor;
     position: absolute;
-    left: calc(50% - #{rpx(76)});
+    left: calc(50% - #{rpx(70)});
     top: rpx(220);
   }
 }

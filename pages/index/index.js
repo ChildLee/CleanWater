@@ -4,7 +4,7 @@ Page({
 
 
   onLoad() {
-
+    app.data.index = -1
   },
 
   protocol() {

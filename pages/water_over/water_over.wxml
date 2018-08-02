@@ -1,7 +1,7 @@
 <view class="water">
   <image src="/image/Order_bg.png"></image>
   <view class="water-title">取水完成</view>
-  <view class="water-time">请按下按钮取水，中断取水20s后自动清零</view>
+  <view class="water-time">请按下按钮取水，中断取水30s后自动清零</view>
 </view>
 
 <view class="order">
@@ -33,6 +33,6 @@
     <text class="remind-red">红色代表热水</text>
     ，
     <text class="remind-blue">蓝色代表冷水</text>
-    ，松开按钮即停止出水，为了让更多人能及时饮水，在中断出水20S后，设备会自动清零该次饮水信息，谢谢您的理解与配合！
+    ，松开按钮即停止出水，为了让更多人能及时饮水，在中断出水30S后，设备会自动清零该次饮水信息，谢谢您的理解与配合！
   </view>
 </view>

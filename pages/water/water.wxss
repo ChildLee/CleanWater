@@ -17,7 +17,7 @@ page {
     left: calc(50% - 45rpx);
     top: 50rpx; }
   .water .tds {
-    color: #bfbd1f;
+    color: #3c7207;
     position: absolute;
     left: calc(50% - 70rpx);
     top: 220rpx; }
@@ -56,9 +56,9 @@ page {
         color: #FF8351; }
     .select-water .list .item-selected {
       border: 4rpx solid #5E9825;
-      background: rgba(94, 152, 37, 0.05); }
-      .select-water .list .item-selected view:last-child {
-        color: #5E9825; }
+      background: rgba(94, 152, 37, 0.15); }
+      .select-water .list .item-selected view {
+        color: #456f1b !important; }
 
 .btn {
   position: absolute;

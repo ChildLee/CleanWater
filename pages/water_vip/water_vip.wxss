@@ -17,9 +17,9 @@ page {
     left: calc(50% - 50rpx);
     top: 50rpx; }
   .water .tds {
-    color: #bfbd1f;
+    color: #498a08;
     position: absolute;
-    left: calc(50% - 76rpx);
+    left: calc(50% - 70rpx);
     top: 220rpx; }
 
 .desc {
