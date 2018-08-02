@@ -1,7 +1,7 @@
 <view class="prompt">
   <image src="/image/home_bg.png"></image>
-  <view>点击扫设备上的二维码</view>
-  <view>查看水质选择水量</view>
+  <view>点击下方按钮</view>
+  <view>扫码喝水</view>
 </view>
 
 <view class="protocol">

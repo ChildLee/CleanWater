@@ -1,5 +1,15 @@
 <view class="water">
-  <image src="/image/Order_but.png"></image>
+  <view class="waveWrapper waveAnimation">
+    <view class="waveWrapperInner bgTop">
+      <view class="wave waveTop"></view>
+    </view>
+    <view class="waveWrapperInner bgMiddle">
+      <view class="wave waveMiddle"></view>
+    </view>
+    <view class="waveWrapperInner bgBottom">
+      <view class="wave waveBottom"></view>
+    </view>
+  </view>
   <view class="quality">优</view>
   <view class="tds">TDS值：{{tds}}</view>
 </view>

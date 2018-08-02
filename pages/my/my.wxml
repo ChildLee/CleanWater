@@ -1,6 +1,6 @@
 <view class="my">
   <image src="{{info.avatarUrl}}"></image>
-  <view class="my-name">{{info.nickName}}</view>
+  <view class="my-name">{{nickName}}</view>
 </view>
 
 <view class="blank_line"></view>
