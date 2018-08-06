@@ -43,7 +43,7 @@ Page({
       app.data.order_vip = JSON.parse(msg.payloadString)
       that.data.isClose = true
       wx.closeSocket({code: 1000})
-      wx.redirectTo({url: '/pages/water_vip_over/water_vip_over'})
+      wx.reLaunch({url: '/pages/water_vip_over/water_vip_over'})
       wx.hideLoading()
     }
 
