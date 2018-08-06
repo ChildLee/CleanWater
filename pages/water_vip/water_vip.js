@@ -20,7 +20,7 @@ Page({
 
   //MQTT
   socket(mac) {
-    const that=this
+    const that = this
     let client = new MQTT.Client('wss://api.ourslinks.com/mqtt', randomString())
     let options = {
       keepAliveInterval: 10,
@@ -34,11 +34,7 @@ Page({
     //MQTT连接
     function onConnect() {
       //订阅
-      client.subscribe(`dt2014/js/${mac}`, {
-        onSuccess() {
-          console.log('订阅成功')
-        }
-      })
+      client.subscribe(`dt2014/js/${mac}`)
     }
 
     //MQTT消息
@@ -54,7 +50,6 @@ Page({
     //MQTT连接断开
     function onConnectionLost(res) {
       if (res.errorCode !== 0) {
-        console.log('onConnectionLost:' + res.errorMessage)
         if (!that.data.isClose && !client.isConnected()) {
           client.connect(options)
         }
@@ -91,7 +86,6 @@ Page({
       user_id: wx.getStorageSync('user_id'),
       device_id: this.data.mac_id
     }).then(res => {
-      // console.log(res)
       // app.data.order_vip = res.data
       // wx.redirectTo({url: '/pages/water_vip_over/water_vip_over'})
     })
