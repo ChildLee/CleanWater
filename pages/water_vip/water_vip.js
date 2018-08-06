@@ -8,19 +8,20 @@ Page({
     money: 0,
     max_dosage: 0,
     tds: 0,
+    isClose: false,
     client: null
   },
 
   onLoad(e) {
     this.init(e)
+
     this.socket(e.mac)
   },
 
   //MQTT
   socket(mac) {
-    const that = this
+    const that=this
     let client = new MQTT.Client('wss://api.ourslinks.com/mqtt', randomString())
-
     let options = {
       keepAliveInterval: 10,
       onSuccess: onConnect
@@ -32,36 +33,21 @@ Page({
 
     //MQTT连接
     function onConnect() {
-      if (that.data.client && that.data.client.isConnected()) {
-        console.log('已连接')
-        return
-      }
-      console.log('MQTT连接成功')
-      that.data.client = client
-
       //订阅
       client.subscribe(`dt2014/js/${mac}`, {
         onSuccess() {
           console.log('订阅成功')
         }
       })
-
-      // let message = new MQTT.Message('Hello')
-      // message.destinationName = 'dt2014/js/867569034842761'
-      // client.send(message)
     }
 
     //MQTT消息
     function onMessageArrived(msg) {
       wx.showLoading({title: '结算中', mask: true})
-      console.log(msg)
-
-      //取消订阅
-      client.unsubscribe(`dt2014/js/${mac}`, {
-        onSuccess() {
-          console.log('取消订阅成功')
-        }
-      })
+      app.data.order_vip = JSON.parse(msg.payloadString)
+      that.data.isClose = true
+      wx.closeSocket({code: 1000})
+      wx.redirectTo({url: '/pages/water_vip_over/water_vip_over'})
       wx.hideLoading()
     }
 
@@ -69,8 +55,7 @@ Page({
     function onConnectionLost(res) {
       if (res.errorCode !== 0) {
         console.log('onConnectionLost:' + res.errorMessage)
-        if (!client.isConnected()) {
-          //断线重连
+        if (!that.data.isClose && !client.isConnected()) {
           client.connect(options)
         }
       }
@@ -106,7 +91,7 @@ Page({
       user_id: wx.getStorageSync('user_id'),
       device_id: this.data.mac_id
     }).then(res => {
-      console.log(res)
+      // console.log(res)
       // app.data.order_vip = res.data
       // wx.redirectTo({url: '/pages/water_vip_over/water_vip_over'})
     })
