@@ -10,12 +10,12 @@ Page({
 
   onLoad(e) {
     this.data.mac_id = e.mac_id
-    let tds = e.tds
+    let tds = e.tds || 0
     if (tds !== undefined && Number(tds) === 0) {
       tds = 0
     } else if (tds !== undefined && tds.length === 1) {
       tds = '00' + tds
-    }else if (tds !== undefined && tds.length === 2) {
+    } else if (tds !== undefined && tds.length === 2) {
       tds = '0' + tds
     }
     this.get_water_package().then(res => {

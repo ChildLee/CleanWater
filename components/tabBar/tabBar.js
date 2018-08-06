@@ -36,8 +36,9 @@ Component({
       // }
       wx.scanCode({
         success(res) {
+          const mac = res.result
           app.api.bind_device({
-            'device_mac': res.result,//:设备MAC地址
+            'device_mac': mac,//:设备MAC地址
             'user_id': wx.getStorageSync('user_id') //:用户ID
           }).then(res => {
             if (res['errcode'] !== 0) {
@@ -48,7 +49,7 @@ Component({
           }).then(res => {
             if (res && Number(res.state) === 1) {
               if (wx.getStorageSync('isVIP')) {
-                wx.navigateTo({url: `/pages/water_vip/water_vip?mac_id=${res.id}&tds=${res['tds_after']}`})
+                wx.navigateTo({url: `/pages/water_vip/water_vip?mac=${mac}&mac_id=${res.id}&tds=${res['tds_after']}`})
               } else {
                 wx.navigateTo({url: `/pages/water/water?mac_id=${res.id}&tds=${res['tds_after']}`})
               }
