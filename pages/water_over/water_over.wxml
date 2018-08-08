@@ -1,7 +1,7 @@
 <view class="water">
   <image src="/image/Order_bg.png"></image>
-  <view class="water-title">取水完成</view>
-  <view class="water-time">请按下按钮取水，中断取水30s后自动清零</view>
+  <view class="water-title">请按下按钮取水</view>
+  <view class="water-time">左：热水,右：常温水；中断取水30s后机器自动清零</view>
 </view>
 
 <view class="order">

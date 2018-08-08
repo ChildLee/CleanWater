@@ -11,8 +11,10 @@
     </view>
   </view>
   <view class="quality">优</view>
-  <view class="tds">TDS值：{{tds}}</view>
+  <view class="tds">{{tds}}ppm</view>
 </view>
+
+<view class="current">当前水质</view>
 
 <view class="desc">
   <text>※水质说明：

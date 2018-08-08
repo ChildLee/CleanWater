@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -94,6 +94,13 @@
 					"name": "重新授权",
 					"pathName": "pages/access/access",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "扫码",
+					"pathName": "pages/scanCode/scanCode",
+					"query": "code=867569034842761",
+					"scene": "1011"
 				}
 			]
 		}

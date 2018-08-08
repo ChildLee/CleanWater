@@ -10,7 +10,8 @@
     "pages/water_over/water_over",
     "pages/find/find",
     "pages/find_info/find_info",
-    "pages/access/access"
+    "pages/access/access",
+    "pages/scanCode/scanCode"
   ],
   "window": {
     "backgroundTextStyle": "light",

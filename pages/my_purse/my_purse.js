@@ -4,7 +4,8 @@ Page({
 
   data: {
     balance: 0,
-    money: 0
+    money: 10,
+    tabIndex: 1
   },
 
   onShow() {
@@ -13,9 +14,9 @@ Page({
     })
   },
 
-  inputMoney(e) {
-    this.data.money = e.detail.value
-  },
+  // inputMoney(e) {
+  //   this.data.money = e.detail.value
+  // },
 
   //统一下单
   unifiedOrder() {
@@ -27,9 +28,10 @@ Page({
   },
 
   pay() {
-    if (Number(this.data.money) < 1) {
-      return wx.showToast({title: '充值金额最少1元', icon: 'none'})
-    }
+    // if (Number(this.data.money) < 1) {
+    //   return wx.showToast({title: '充值金额最少1元', icon: 'none'})
+    // }
+
     wx.showLoading({title: '请稍后'})
     this.unifiedOrder().then(res => {
       wx.hideLoading()
@@ -55,6 +57,14 @@ Page({
       wx.setStorageSync('money', res.data['money'])
       wx.setStorageSync('max_dosage', res.data['max_dosage'])
       wx.setStorageSync('isVIP', true)
+    })
+  },
+
+  tab(e) {
+    console.log(e)
+    this.setData({
+      money: e.currentTarget.dataset.price,
+      tabIndex: e.currentTarget.dataset.id
     })
   }
 })

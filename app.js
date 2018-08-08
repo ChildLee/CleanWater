@@ -14,9 +14,9 @@ App({
 
   onLaunch() {
     //用户登录
-    const user_id=wx.getStorageSync('user_id')
+    const user_id = wx.getStorageSync('user_id')
     if (!user_id) {
-      wx.showLoading({title: '加载中~'})
+      wx.showLoading({title: '加载中~', mask: true})
       wx.login({
         success(res) {
           api.get_open_id({code: res.code}).then(res => {
@@ -39,7 +39,7 @@ App({
         }
       })
     } else {
-      api.get_user_info({user_id: user_id}).then(res=>{
+      api.get_user_info({user_id: user_id}).then(res => {
         let isVIP = false
         if (Number(res.data['money']) > 0) {
           isVIP = true
