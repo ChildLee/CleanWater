@@ -37,7 +37,7 @@ Page({
           clearInterval(timing)
           resolve(user_id)
         }
-      })
+      }, 100)
     })
   }
 })
