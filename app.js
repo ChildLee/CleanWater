@@ -14,7 +14,7 @@ App({
 
   onLaunch() {
     //用户登录
-    const user_id = wx.getStorageSync('user_id')
+    let user_id = wx.getStorageSync('user_id')
     if (!user_id) {
       wx.showLoading({title: '加载中~', mask: true})
       wx.login({
@@ -24,7 +24,7 @@ App({
           }).then(openid => {
             return api.register({open_id: openid})
           }).then(res => {
-            wx.setStorageSync('user_id', res.data['id'])
+            user_id = res.data['id']
             return api.get_user_info({user_id: res.data.id})
           }).then(res => {
             let isVIP = false
@@ -34,6 +34,7 @@ App({
             wx.setStorageSync('money', res.data['money'])
             wx.setStorageSync('max_dosage', res.data['max_dosage'])
             wx.setStorageSync('isVIP', isVIP)
+            wx.setStorageSync('user_id', user_id)
             wx.hideLoading()
           })
         }

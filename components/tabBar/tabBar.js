@@ -36,7 +36,12 @@ Component({
       // }
       wx.scanCode({
         success(res) {
-          const mac = res.result
+          let code;
+          if (res.path) {
+            let param = res.path.split('?')
+            code = param[1].split('=')[1]
+          }
+          const mac = code || res.result
           app.api.bind_device({
             'device_mac': mac,//:设备MAC地址
             'user_id': wx.getStorageSync('user_id') //:用户ID

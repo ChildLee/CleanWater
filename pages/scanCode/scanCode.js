@@ -1,39 +1,40 @@
-// pages/scanCode/scanCode.js
+const app = getApp()
+
 Page({
 
-  onLoad(e) {
-    const code = e.code
+  onLoad(options) {
+    const code = decodeURIComponent(options['scene'])
     this.getUser_id().then(user_id => {
-      console.log(user_id)
+      return app.api.bind_device({
+        'device_mac': code,//:设备MAC地址
+        'user_id': user_id //:用户ID
+      })
+    }).then(res => {
+      if (res['errcode'] !== 0) {
+        wx.reLaunch({
+          url: '/pages/index/index'
+        })
+        return wx.showToast({title: res['errmsg'], icon: 'none'})
+      } else {
+        return res.data
+      }
+    }).then(res => {
+      if (res && Number(res.state) === 1) {
+        if (wx.getStorageSync('isVIP')) {
+          wx.redirectTo({url: `/pages/water_vip/water_vip?mac=${code}&mac_id=${res.id}&tds=${res['tds_after']}`})
+        } else {
+          wx.redirectTo({url: `/pages/water/water?mac_id=${res.id}&tds=${res['tds_after']}`})
+        }
+      }
     })
-
-
-    // app.api.bind_device({
-    //   'device_mac': mac,//:设备MAC地址
-    //   'user_id':user_id //:用户ID
-    // }).then(res => {
-    //   if (res['errcode'] !== 0) {
-    //     return wx.showToast({title: res['errmsg'], icon: 'none'})
-    //   } else {
-    //     return res.data
-    //   }
-    // }).then(res => {
-    //   if (res && Number(res.state) === 1) {
-    //     if (wx.getStorageSync('isVIP')) {
-    //       wx.redirectTo({url: `/pages/water_vip/water_vip?mac=${mac}&mac_id=${res.id}&tds=${res['tds_after']}`})
-    //     } else {
-    //       wx.redirectTo({url: `/pages/water/water?mac_id=${res.id}&tds=${res['tds_after']}`})
-    //     }
-    //   }
-    // })
   },
 
   getUser_id() {
-    return new Promise((resolve, reject) => {
-      setInterval(function () {
+    return new Promise((resolve) => {
+      const timing = setInterval(() => {
         const user_id = wx.getStorageSync('user_id')
         if (user_id) {
-          clearInterval(this)
+          clearInterval(timing)
           resolve(user_id)
         }
       })
