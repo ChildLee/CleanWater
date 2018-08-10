@@ -9,7 +9,8 @@ Page({
     max_dosage: 0,
     tds: 0,
     isClose: false,
-    client: null
+    client: null,
+    over: true
   },
 
   onLoad(e) {
@@ -23,11 +24,6 @@ Page({
       money: wx.getStorageSync('money'),
       max_dosage: wx.getStorageSync('max_dosage')
     })
-  },
-
-  onHide() {
-    //切入后台后防BUG机制
-    this.data.reLaunch = true
   },
 
   //MQTT
@@ -51,18 +47,20 @@ Page({
 
     //MQTT消息
     function onMessageArrived(msg) {
-      if (!this.data.reLaunch) {
-        wx.showLoading({title: '结算中', mask: true})
-        app.data.order_vip = JSON.parse(msg.payloadString)
-        that.data.isClose = true
-        wx.closeSocket({code: 1000})
+      wx.showLoading({title: '结算中', mask: true})
+      app.data.order_vip = JSON.parse(msg.payloadString)
+      that.data.isClose = true
+      wx.closeSocket({code: 1000})
+      wx.hideLoading()
+      if (that.data.over) {
         wx.reLaunch({url: '/pages/water_vip_over/water_vip_over'})
-        wx.hideLoading()
+        that.data.over = false
       }
     }
 
     //MQTT连接断开
     function onConnectionLost(res) {
+      console.log('mqtt断开')
       if (res.errorCode !== 0) {
         if (!that.data.isClose && !client.isConnected()) {
           client.connect(options)
@@ -93,11 +91,13 @@ Page({
       user_id: wx.getStorageSync('user_id'),
       device_id: this.data.mac_id
     }).then(res => {
-      console.log(res)
-      if (this.data.reLaunch) {
-        app.data.order_vip = res.data
+      app.data.order_vip = res.data
+      this.data.isClose = true
+      wx.closeSocket({code: 1000})
+      wx.hideLoading()
+      if (this.data.over) {
         wx.reLaunch({url: '/pages/water_vip_over/water_vip_over'})
-        wx.hideLoading()
+        this.data.over = false
       }
     })
   }
