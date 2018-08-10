@@ -26,6 +26,13 @@ Page({
     })
   },
 
+  tab(e) {
+    app.data.water = e.currentTarget.dataset.item
+    this.setData({
+      water_package_id: e.currentTarget.dataset.id
+    })
+  },
+
   /**
    * 获取水量套餐包
    */
@@ -42,13 +49,6 @@ Page({
       water_package_id: this.data.water_package_id,  //:套餐ID 当 type = 1时 可不填 type = 2时 必填
       device_id: this.data.mac_id,                      //:设备ID 当 type = 1时 可不填 type = 2时 必填
       user_id: wx.getStorageSync('user_id')                     //:用户ID 必填
-    })
-  },
-
-  tab(e) {
-    app.data.water = e.currentTarget.dataset.item
-    this.setData({
-      water_package_id: e.currentTarget.dataset.id
     })
   },
 
