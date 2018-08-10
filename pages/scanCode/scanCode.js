@@ -3,7 +3,8 @@ const app = getApp()
 Page({
 
   onLoad(options) {
-    const code = decodeURIComponent(options['scene'])
+    wx.showLoading({title: '加载中~', mask: true})
+    const code = options['scene']
     this.getUser_id().then(user_id => {
       return app.api.bind_device({
         'device_mac': code,//:设备MAC地址
@@ -26,6 +27,7 @@ Page({
           wx.redirectTo({url: `/pages/water/water?mac_id=${res.id}&tds=${res['tds_after']}`})
         }
       }
+      wx.hideLoading()
     })
   },
 
@@ -37,7 +39,7 @@ Page({
           clearInterval(timing)
           resolve(user_id)
         }
-      }, 100)
+      }, 200)
     })
   }
 })

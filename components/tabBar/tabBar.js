@@ -36,7 +36,11 @@ Component({
       // }
       wx.scanCode({
         success(res) {
-          let code;
+          const user_id = wx.getStorageSync('user_id')
+          if (!user_id) {
+            return wx.showToast({title: '用户信息获取失败', icon: 'none'})
+          }
+          let code
           if (res.path) {
             let param = res.path.split('?')
             code = param[1].split('=')[1]

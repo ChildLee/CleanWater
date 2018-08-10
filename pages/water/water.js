@@ -48,12 +48,15 @@ Page({
       type: '2',                           //:订单类型 1:用户充值 2：用户购买套餐
       water_package_id: this.data.water_package_id,  //:套餐ID 当 type = 1时 可不填 type = 2时 必填
       device_id: this.data.mac_id,                      //:设备ID 当 type = 1时 可不填 type = 2时 必填
-      user_id: wx.getStorageSync('user_id')                     //:用户ID 必填
+      user_id: app.data.id                   //:用户ID 必填
     })
   },
 
   //支付
   pay() {
+    if (!app.data.id) {
+      return wx.showToast({title: '用户信息获取失败', icon: 'none'})
+    }
     wx.showLoading({title: '请稍后'})
     if (this.data.water_package_id === -1) {
       wx.showToast({title: '请选择水量', icon: 'none'})
