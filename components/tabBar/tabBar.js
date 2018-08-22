@@ -57,7 +57,7 @@ Component({
             }
           }).then(res => {
             if (res && Number(res.state) === 1) {
-              if (Number(wx.getStorageSync('money')) > 1) {
+              if (Number(wx.getStorageSync('money')) > 0) {
                 wx.redirectTo({url: `/pages/water_vip/water_vip?mac=${mac}&mac_id=${res.id}&tds=${res['tds_after']}`})
               } else {
                 wx.redirectTo({url: `/pages/water/water?mac_id=${res.id}&tds=${res['tds_after']}`})
