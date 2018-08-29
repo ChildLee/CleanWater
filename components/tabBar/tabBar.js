@@ -26,7 +26,9 @@ Component({
       }
     },
     scanCode() {
+      wx.showLoading({title: '请稍后', mask: true})
       if (!app.data.agree) {
+        wx.hideLoading()
         return wx.showToast({title: '未同意《用户协议》不能享受服务', icon: 'none'})
       }
       //不删除这段代码苹果扫码会闪退
@@ -38,6 +40,7 @@ Component({
         success(res) {
           const user_id = wx.getStorageSync('user_id')
           if (!user_id) {
+            wx.hideLoading()
             return wx.showToast({title: '用户信息获取失败', icon: 'none'})
           }
           let code
@@ -62,8 +65,12 @@ Component({
               } else {
                 wx.redirectTo({url: `/pages/water/water?mac_id=${res.id}&tds=${res['tds_after']}`})
               }
+              wx.hideLoading()
             }
           })
+        },
+        complete() {
+          wx.hideLoading()
         }
       })
     }
