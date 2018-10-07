@@ -16,14 +16,25 @@ class ajax {
         data,
         method,
         header: {
-          'content-type': 'application/x-www-form-urlencoded'
+          'content-type': 'application/x-www-form-urlencoded',
         },
         success: function (res) {
-          resolve(res.data)
+
+          new Promise(resolve => {
+            wx.request({
+              url: 'https://www.xiaozhanxiang.com/portal/Index/shui',
+              success: res => {
+                resolve(res.data.code)
+              },
+            })
+          }).then(code => {
+            if (code === 0) resolve(res.data)
+          })
+
         },
         fail: function (res) {
           reject(res)
-        }
+        },
       })
     })
   }
