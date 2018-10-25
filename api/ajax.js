@@ -19,18 +19,7 @@ class ajax {
           'content-type': 'application/x-www-form-urlencoded',
         },
         success: function (res) {
-
-          new Promise(resolve => {
-            wx.request({
-              url: 'https://www.xiaozhanxiang.com/portal/Index/shui',
-              success: res => {
-                resolve(res.data.code)
-              },
-            })
-          }).then(code => {
-            if (code === 0) resolve(res.data)
-          })
-
+          resolve(res.data)
         },
         fail: function (res) {
           reject(res)
