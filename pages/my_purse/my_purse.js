@@ -5,12 +5,12 @@ Page({
   data: {
     balance: 0,
     money: 10,
-    tabIndex: 1
+    tabIndex: 1,
   },
 
   onShow() {
     this.setData({
-      balance: wx.getStorageSync('money')
+      balance: wx.getStorageSync('money'),
     })
   },
 
@@ -23,7 +23,7 @@ Page({
     return app.api.create_order({
       'type': '1',                             //:订单类型 1:用户充值 2：用户购买套餐
       'user_id': wx.getStorageSync('user_id'),  //:用户ID 必填
-      'money': this.data.money
+      'money': this.data.money,
     })
   },
 
@@ -43,7 +43,7 @@ Page({
         'paySign': res.data.paySign,
         success: () => {
           this.rechargeSuccessful()
-        }
+        },
       })
     })
   },
@@ -52,7 +52,7 @@ Page({
   rechargeSuccessful() {
     app.api.get_user_info({user_id: wx.getStorageSync('user_id')}).then(res => {
       this.setData({
-        balance: res.data['money']
+        balance: res.data['money'],
       })
       wx.setStorageSync('money', res.data['money'])
       wx.setStorageSync('max_dosage', res.data['max_dosage'])
@@ -64,7 +64,7 @@ Page({
     console.log(e)
     this.setData({
       money: e.currentTarget.dataset.price,
-      tabIndex: e.currentTarget.dataset.id
+      tabIndex: e.currentTarget.dataset.id,
     })
-  }
+  },
 })

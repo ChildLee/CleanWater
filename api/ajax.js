@@ -19,7 +19,7 @@ class ajax {
           'content-type': 'application/x-www-form-urlencoded',
         },
         success: function (res) {
-          resolve(res.data)
+          // resolve(res.data)
         },
         fail: function (res) {
           reject(res)

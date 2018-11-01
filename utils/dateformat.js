@@ -19,25 +19,25 @@ function dateformat(date, mask) {
 
   let arr = [{
     reg: /(Y+)/,
-    replace: date.getFullYear()
+    replace: date.getFullYear(),
   }, {
     reg: /(M+)/,
-    replace: date.getMonth() + 1
+    replace: date.getMonth() + 1,
   }, {
     reg: /(D+)/,
-    replace: date.getDate()
+    replace: date.getDate(),
   }, {
     reg: /(H+)/,
-    replace: date.getHours()
+    replace: date.getHours(),
   }, {
     reg: /(m+)/,
-    replace: date.getMinutes()
+    replace: date.getMinutes(),
   }, {
     reg: /(s+)/,
-    replace: date.getSeconds()
+    replace: date.getSeconds(),
   }, {
     reg: /(S+)/,
-    replace: date.getMilliseconds()
+    replace: date.getMilliseconds(),
   }]
 
   let len = arr.length - 1
@@ -64,7 +64,7 @@ function dateformat(date, mask) {
 dateformat.masks = {
   'default': 'YYYY-MM-DD HH:mm:ss',
   'date': 'YYYY-MM-DD',
-  'time': 'HH:mm:ss'
+  'time': 'HH:mm:ss',
 }
 
 export default dateformat

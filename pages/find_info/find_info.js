@@ -3,7 +3,7 @@ const app = getApp()
 Page({
 
   data: {
-    url: ''
+    url: '',
   },
 
   onLoad(e) {
@@ -14,8 +14,8 @@ Page({
   find_info(id) {
     app.api.get_Information_detail({id}).then(res => {
       this.setData({
-        url: res.data.content
+        url: res.data.content,
       })
     })
-  }
+  },
 })

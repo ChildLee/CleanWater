@@ -2,13 +2,13 @@ const app = getApp()
 
 Page({
   data: {
-    order_vip: {}
+    order_vip: {},
   },
 
   onLoad() {
     this.setData({
       date: app.dateformat(),
-      order_vip: app.data.order_vip
+      order_vip: app.data.order_vip,
     })
     this.rechargeSuccessful()
   },
@@ -19,5 +19,5 @@ Page({
       wx.setStorageSync('max_dosage', res.data['max_dosage'])
       wx.setStorageSync('isVIP', true)
     })
-  }
+  },
 })

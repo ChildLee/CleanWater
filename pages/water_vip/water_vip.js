@@ -10,7 +10,7 @@ Page({
     tds: 0,
     isClose: false,
     client: null,
-    over: true
+    over: true,
   },
 
   onLoad(e) {
@@ -22,7 +22,7 @@ Page({
   onShow() {
     this.setData({
       money: wx.getStorageSync('money'),
-      max_dosage: wx.getStorageSync('max_dosage')
+      max_dosage: wx.getStorageSync('max_dosage'),
     })
   },
 
@@ -32,7 +32,7 @@ Page({
     let client = new MQTT.Client('wss://api.ourslinks.com/mqtt', randomString())
     let options = {
       keepAliveInterval: 10,
-      onSuccess: onConnect
+      onSuccess: onConnect,
     }
 
     client.onConnectionLost = onConnectionLost
@@ -80,7 +80,7 @@ Page({
       tds = '0' + tds
     }
     this.setData({
-      tds
+      tds,
     })
   },
 
@@ -89,7 +89,7 @@ Page({
     wx.showLoading({title: '结算中', mask: true})
     app.api.close_water({
       user_id: wx.getStorageSync('user_id'),
-      device_id: this.data.mac_id
+      device_id: this.data.mac_id,
     }).then(res => {
       app.data.order_vip = res.data
       this.data.isClose = true
@@ -100,7 +100,7 @@ Page({
         this.data.over = false
       }
     })
-  }
+  },
 })
 
 function randomString(len) {

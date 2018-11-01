@@ -8,12 +8,12 @@ Page({
     this.getUser_id().then(user_id => {
       return app.api.bind_device({
         'device_mac': code,//:设备MAC地址
-        'user_id': user_id //:用户ID
+        'user_id': user_id, //:用户ID
       })
     }).then(res => {
       if (res['errcode'] !== 0) {
         wx.reLaunch({
-          url: '/pages/index/index'
+          url: '/pages/index/index',
         })
         return wx.showToast({title: res['errmsg'], icon: 'none'})
       } else {
@@ -41,5 +41,5 @@ Page({
         }
       }, 200)
     })
-  }
+  },
 })

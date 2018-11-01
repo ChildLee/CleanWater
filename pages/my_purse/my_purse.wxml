@@ -20,7 +20,7 @@
       <view>赠送10元</view>
     </view>
 
-    <view class="item {{tabIndex===2?'item-selected':''}}"data-price="{{20}}" data-id="{{2}}" bindtap="tab">
+    <view class="item {{tabIndex===2?'item-selected':''}}" data-price="{{20}}" data-id="{{2}}" bindtap="tab">
       <view>￥20</view>
       <view>赠送30元</view>
     </view>

@@ -2,7 +2,7 @@ const app = getApp()
 
 Page({
   data: {
-    switch: false
+    switch: false,
   },
 
   onShow() {
@@ -13,16 +13,16 @@ Page({
             success(res) {
               app.data.index = 1
               wx.redirectTo({url: '/pages/my/my'})
-            }
+            },
           })
         }
-      }
+      },
     })
   },
 
   switch(e) {
     this.setData({
-      switch: !e.detail.value
+      switch: !e.detail.value,
     })
-  }
+  },
 })

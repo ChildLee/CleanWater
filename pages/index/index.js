@@ -14,5 +14,5 @@ Page({
   //同意协议
   agree(e) {
     app.data.agree = e.detail.value.length
-  }
+  },
 })

@@ -9,7 +9,7 @@ App({
   data: {
     index: -1,
     //默认同意协议
-    agree: 1
+    agree: 1,
   },
 
   onLaunch() {
@@ -38,7 +38,7 @@ App({
           this.data.id = res.data['id']
           wx.hideLoading()
         })
-      }
+      },
     })
-  }
+  },
 })

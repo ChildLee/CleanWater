@@ -6,8 +6,8 @@ Page({
 
   onLoad() {
     this.setData({
-      water: app.data.water
+      water: app.data.water,
     })
-  }
+  },
 
 })

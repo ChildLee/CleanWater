@@ -4,8 +4,8 @@ Component({
   properties: {
     setIndex: {
       type: Number,
-      value: -1
-    }
+      value: -1,
+    },
   },
   methods: {
     find() {
@@ -51,7 +51,7 @@ Component({
           const mac = code || res.result
           app.api.bind_device({
             'device_mac': mac,//:设备MAC地址
-            'user_id': wx.getStorageSync('user_id') //:用户ID
+            'user_id': wx.getStorageSync('user_id'), //:用户ID
           }).then(res => {
             if (res['errcode'] !== 0) {
               return wx.showToast({title: res['errmsg'], icon: 'none'})
@@ -71,8 +71,8 @@ Component({
         },
         complete() {
           wx.hideLoading()
-        }
+        },
       })
-    }
-  }
+    },
+  },
 })

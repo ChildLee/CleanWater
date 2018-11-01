@@ -4,7 +4,7 @@ Page({
 
   data: {
     domain: '',
-    list: []
+    list: [],
   },
 
   onLoad() {
@@ -15,14 +15,14 @@ Page({
   get_Information_list() {
     app.api.get_Information_list({
       enterprise_id: 35563,
-      page: 1
+      page: 1,
     }).then(res => {
       if (res) {
         this.setData({
           domain: res.domain,
-          list: res.data
+          list: res.data,
         })
       }
     })
-  }
+  },
 })

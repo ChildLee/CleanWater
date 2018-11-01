@@ -3,7 +3,7 @@ const app = getApp()
 Page({
 
   data: {
-    balance: 0
+    balance: 0,
   },
 
   onLoad() {
@@ -14,16 +14,16 @@ Page({
 
         this.setData({
           nickName,
-          info: res.userInfo
+          info: res.userInfo,
         })
-      }
+      },
     })
   },
 
   onShow() {
     this.setData({
       setIndex: app.data.index,
-      balance: wx.getStorageSync('money')
+      balance: wx.getStorageSync('money'),
     })
-  }
+  },
 })

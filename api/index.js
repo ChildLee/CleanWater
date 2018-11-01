@@ -36,5 +36,5 @@ export default {
   //发现详情
   get_Information_detail(param) {
     return ajax.post('/get_Information_detail', param)
-  }
+  },
 }

@@ -5,7 +5,7 @@ Page({
   data: {
     water_package_id: -1,
     water: [],
-    tds: 0
+    tds: 0,
   },
 
   onLoad(e) {
@@ -21,7 +21,7 @@ Page({
     this.get_water_package().then(res => {
       this.setData({
         tds,
-        water: res.data
+        water: res.data,
       })
     })
   },
@@ -29,7 +29,7 @@ Page({
   tab(e) {
     app.data.water = e.currentTarget.dataset.item
     this.setData({
-      water_package_id: e.currentTarget.dataset.id
+      water_package_id: e.currentTarget.dataset.id,
     })
   },
 
@@ -48,7 +48,7 @@ Page({
       type: '2',                           //:订单类型 1:用户充值 2：用户购买套餐
       water_package_id: this.data.water_package_id,  //:套餐ID 当 type = 1时 可不填 type = 2时 必填
       device_id: this.data.mac_id,                      //:设备ID 当 type = 1时 可不填 type = 2时 必填
-      user_id: app.data.id                   //:用户ID 必填
+      user_id: app.data.id,                   //:用户ID 必填
     })
   },
 
@@ -71,9 +71,9 @@ Page({
           paySign: res.data.paySign,
           success(res) {
             wx.redirectTo({url: '/pages/water_over/water_over'})
-          }
+          },
         })
       })
     }
-  }
+  },
 })
